@@ -1,19 +1,19 @@
 // Insertion Sort
 
-function insertionSort(items) {
-    const itemsLength = items.length;
+function insertionSort(list) {
+    const listLength = list.length;
     
-    for (let i = 0; i <= items.length -1; i++) {
+    for (let i = 0; i <= list.length -1; i++) {
         let j = i;
-        while (j > 0 && items[j - 1] > items[j]) {
-            let tmp = items[j - 1];
-            items[j - 1] = items[j];
-            items[j] = tmp;
+        while (j > 0 && list[j - 1] > list[j]) {
+            let tmp = list[j - 1];
+            list[j - 1] = list[j];
+            list[j] = tmp;
             j--;
         }
     }
     
-    return items;
+    return list;
 }
 
 module.exports = insertionSort;

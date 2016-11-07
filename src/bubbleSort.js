@@ -1,20 +1,20 @@
 // Bubble Sort
 
-function bubbleSort(items) {
-    const itemsLength = items.length;
+function bubbleSort(list) {
+    const listLength = list.length;
     
-    for(let i = itemsLength - 1; i >= 0; i--) {
-        for (let j = itemsLength - i; j >= 0; j--) {
-            if (items[j] > items[j + 1]) {
+    for(let i = listLength - 1; i >= 0; i--) {
+        for (let j = listLength - i; j >= 0; j--) {
+            if (list[j] > list[j + 1]) {
                 // swap elements
-                let tmp = items[j];
-                items[j] = items[j + 1];
-                items[j + 1] = tmp;
+                let tmp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = tmp;
             }
         }
     }
     
-    return items;
+    return list;
 }
 
 module.exports = bubbleSort;

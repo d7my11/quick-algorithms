@@ -1,22 +1,22 @@
 // Quick Sort
 
-function quickSort(items, left, right) {
+function quickSort(list, left, right) {
     let i = left;
     let j = right;
     
     const pivotIndex = Math.floor((left + right) / 2);
-    const pivot = items[pivotIndex];
+    const pivot = list[pivotIndex];
     
     while (i <= j) {
-        while (items[i] < pivot) i++;
+        while (list[i] < pivot) i++;
         
-        while (items[j] > pivot) j--;
+        while (list[j] > pivot) j--;
         
         if (i <= j) {
             // swap elemenet
-            let tmp = items[j];
-            items[j] = items[i];
-            items[i] = tmp;
+            let tmp = list[j];
+            list[j] = list[i];
+            list[i] = tmp;
             
             i++;
             j--;
@@ -24,14 +24,14 @@ function quickSort(items, left, right) {
     }
     
     if (left < j) {
-        quickSort(items, left, j);
+        quickSort(list, left, j);
     }
     
     if (right > i) {
-        quickSort(items, i, right);
+        quickSort(list, i, right);
     }
     
-    return items;
+    return list;
 }
 
 module.exports = quickSort;
